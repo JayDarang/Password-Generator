@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">
+        <h1>Password Generator</h1>
+        <p>
+          Generate strong and secure passwords effortlessly with Password
+          Generator.
+        </p>
+      </div>
+      <div class="passlength">
+        <p>Password length: characters</p>
+        <div class="scroll-bar">
+          <input
+            type="range"
+            name="passLength"
+            min="8"
+            max="20"
+            id="passwordLength"
+            class="password-length"
+            oninput="updateValue(this.value)"
+          />
+        </div>
+      </div>
+      <div class="options">
+        <label>
+          <input type="checkbox" name="uppercase" value="uppercase" />
+          Uppercase Letters
+        </label>
+        <br />
+        <label>
+          <input type="checkbox" name="lowercase" value="lowercase" />
+          Lowercase Letters
+        </label>
+        <br />
+        <label>
+          <input type="checkbox" name="numbers" value="numbers" />
+          Numbers
+        </label>
+        <br />
+        <label>
+          <input type="checkbox" name="specialsymbols" value="specialsymbols" />
+          Special Symbols
+        </label>
+      </div>
+      <div class="generate">
+        <button onclick="generate()">Generate Password</button>
+      </div>
+      <div class="result">
+        <span id="result-el">result goes here </span>
+        <button class="copy">Copy</button>
+      </div>
+    </div>
+  </body>
+  <script src="index.js"></script>
+</html>

@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #12161c;
+  color: #ffffff;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.title {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.title h1 {
+  font-size: 2em;
+  color: #f0b90b;
+}
+
+.title p {
+  font-size: 1em;
+  color: #c9d1d9;
+}
+
+.passlength {
+  margin-bottom: 20px;
+}
+
+.password-length {
+  width: 100%;
+  padding: 10px;
+  background: #323742;
+  border: none;
+  border-radius: 4px;
+  color: #c9d1d9;
+}
+
+.options {
+  margin-bottom: 20px;
+}
+
+.options label {
+  display: block;
+  margin: 10px 0;
+  color: #c9d1d9;
+}
+
+.options input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.generate {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.generate button {
+  padding: 10px 20px;
+  background-color: #f0b90b;
+  border: none;
+  border-radius: 4px;
+  color: #12161c;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.generate button:hover {
+  background-color: #c7a509;
+}
+
+.result {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #323742;
+  border-radius: 4px;
+}
+
+.result span {
+  flex-grow: 1;
+  margin-right: 20px;
+  color: #c9d1d9;
+}
+
+.copy {
+  padding: 10px 20px;
+  background-color: #f0b90b;
+  border: none;
+  border-radius: 4px;
+  color: #12161c;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.copy:hover {
+  background-color: #c7a509;
+}
