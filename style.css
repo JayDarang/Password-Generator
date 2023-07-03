@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: #ebebeb;
+  background-color: #f7f7f7;
   color: #484848;
 }
 
@@ -28,11 +28,13 @@ body {
 .title h1 {
   font-size: 2.5em;
   color: #484848;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .title p {
   font-size: 1em;
-  color: #484848;
+  color: #777777;
 }
 
 .passlength {
@@ -46,6 +48,16 @@ body {
   border: 1px solid #ebebeb;
   border-radius: 4px;
   color: #484848;
+  outline: none;
+}
+
+.password-length::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background-color: #ff5a5f;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 .options {
@@ -96,6 +108,8 @@ body {
   flex-grow: 1;
   margin-right: 20px;
   color: #484848;
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
 .copy {
@@ -117,4 +131,15 @@ body {
   font-size: 1.5rem;
   font-weight: 300;
   color: #484848;
+}
+
+.passLevel {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#pass-level {
+  color: #ff5a5f;
+  font-size: 1.2rem;
+  font-weight: 500;
 }

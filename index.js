@@ -6,7 +6,7 @@ let passEl = document.getElementById("pass-el");
 let resultEl = document.getElementById("result-el");
 
 // Set default password source
-let passSource = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let passSource = "";
 
 // Update the password source based on selected checkbox options
 function updatePassSource() {
@@ -14,11 +14,13 @@ function updatePassSource() {
 
   // Array of checkbox names
   const checkboxes = ["uppercase", "lowercase", "numbers", "specialsymbols"];
+  let isChecked = false; // Variable to check if any checkbox is checked
 
   // Iterate over checkboxes and build the password source
   checkboxes.forEach((checkboxName) => {
     const checkbox = document.querySelector(`input[name="${checkboxName}"]`);
     if (checkbox.checked) {
+      isChecked = true; // At least one checkbox is checked
       switch (checkboxName) {
         case "uppercase":
           passSource += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -34,7 +36,16 @@ function updatePassSource() {
           break;
       }
     }
+    updatePassStrength(); // Update password strength when the password source changes
   });
+
+  if (!isChecked) {
+    // If no checkbox is checked
+    alert(
+      "All boxes are unchecked. Default is lowercase to generate new password."
+    );
+    passSource = "abcdefghijklmnopqrstuvwxyz"; // Set password source to lowercase characters
+  }
 
   passEl.textContent = passLength;
   resultEl.textContent = generate();
@@ -45,6 +56,7 @@ function updateValue(value) {
   passLength = value;
   passEl.textContent = passLength;
   updatePassSource(); // Update password source when the password length changes
+  updatePassStrength(); // Update password strength when the password length changes
 }
 
 // Generate a random password based on the selected options
@@ -97,6 +109,36 @@ function copyToClipboard() {
   alert("Password copied to clipboard");
 }
 
-const copyBtn = document.getElementById("copy-btn");
+// Add update password strength level
+function updatePassStrength() {
+  let passStrengthEl = document.getElementById("pass-level");
+  let strength = 0;
 
-copyBtn.addEventListener("click");
+  // Add strength based on the types of characters and length
+  if (passSource.includes("ABCDEFGHIJKLMNOPQRSTUVWXYZ")) strength++;
+  if (passSource.includes("abcdefghijklmnopqrstuvwxyz")) strength++;
+  if (passSource.includes("0123456789")) strength++;
+  if (passSource.includes("!@#$%^&*()")) strength++;
+  if (passLength > 15) strength++;
+
+  // Update pass-level element based on strength
+  switch (strength) {
+    case 1:
+    case 2:
+      passStrengthEl.textContent = "VERY WEAK";
+      passStrengthEl.style.color = "red";
+      break;
+    case 3:
+      passStrengthEl.textContent = "WEAK";
+      passStrengthEl.style.color = "orange";
+      break;
+    case 4:
+      passStrengthEl.textContent = "STRONG";
+      passStrengthEl.style.color = "green";
+      break;
+    case 5:
+      passStrengthEl.textContent = "VERY STRONG";
+      passStrengthEl.style.color = "darkgreen";
+      break;
+  }
+}
