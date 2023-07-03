@@ -1,8 +1,13 @@
 # Password Generator
 
+![Password Generator](screen-shot.JPG)
 
 
 This is a simple password generator app created as a solo project using vanilla JavaScript. It allows users to generate strong and secure passwords based on their specified criteria.
+
+## Live Demo
+
+You can try out the live version of the app [here](https://jaydarang.github.io/Password-Generator/).
 
 ## Features
 
