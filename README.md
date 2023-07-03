@@ -1,5 +1,6 @@
 # Password Generator
 
+![Password Generator](screen-shot.JPG)
 
 
 This is a simple password generator app created as a solo project using vanilla JavaScript. It allows users to generate strong and secure passwords based on their specified criteria.
