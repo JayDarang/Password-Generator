@@ -6,7 +6,7 @@ let passEl = document.getElementById("pass-el");
 let resultEl = document.getElementById("result-el");
 
 // Set default password source
-let passSource = "";
+let passSource = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 // Update the password source based on selected checkbox options
 function updatePassSource() {
