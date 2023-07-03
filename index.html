@@ -16,27 +16,33 @@
         </p>
       </div>
       <div class="passlength">
-        <p>Password length: characters</p>
+        <p>
+          Password length:
+          <strong id="pass-el" style="font-size: 1.5rem; color: #f0b90b"
+            >8</strong
+          >
+        </p>
         <div class="scroll-bar">
           <input
             type="range"
             name="passLength"
             min="8"
-            max="20"
+            max="30"
             id="passwordLength"
             class="password-length"
+            value="8"
             oninput="updateValue(this.value)"
           />
         </div>
       </div>
       <div class="options">
         <label>
-          <input type="checkbox" name="uppercase" value="uppercase" />
+          <input type="checkbox" name="uppercase" value="uppercase" checked />
           Uppercase Letters
         </label>
         <br />
         <label>
-          <input type="checkbox" name="lowercase" value="lowercase" />
+          <input type="checkbox" name="lowercase" value="lowercase" checked />
           Lowercase Letters
         </label>
         <br />
@@ -51,11 +57,13 @@
         </label>
       </div>
       <div class="generate">
-        <button onclick="generate()">Generate Password</button>
+        <button onclick="getGenerate()">Generate Password</button>
       </div>
       <div class="result">
-        <span id="result-el">result goes here </span>
-        <button class="copy">Copy</button>
+        <span id="result-el"></span>
+        <button class="copy" id="copy-btn" onclick="copyToClipboard()">
+          Copy
+        </button>
       </div>
     </div>
   </body>
